@@ -17,7 +17,9 @@ function Home() {
       <h1>POKEDEX</h1>
       <h2>!Hola Entrenador</h2>
       <p>Para poder comenzar dame tu nombre</p>
-        <input type="text" ref={inputRef} />
+        <input type="text" ref={inputRef}
+        onKeyDown={(e) => e.key === 'Enter' && handleSetName()}
+         />
         <button onClick={handleSetName}>Comenzar</button>
     </div>
   )

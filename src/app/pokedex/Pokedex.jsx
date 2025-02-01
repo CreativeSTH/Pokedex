@@ -1,5 +1,6 @@
 import { useName } from "../../hooks/useName"
 import { useEffect, useState } from "react"
+import { Link } from "react-router"
 import axios from "axios"
 import PokemonList from "./components/PokemonList"
 
@@ -11,7 +12,9 @@ function Pokedex() {
     const [filteredPokemons, setFilteredPokemons] = useState(pokemons)
     const [selectedType, setSelectedType]= useState('all')
     const [types, setTypes] = useState([])
-    const {name} = useName()
+    const [singlePokemon, setSinglePokemon] = useState(null)
+
+    const {name, clearName} = useName()
 
     // Funcion para cargar los primeros 20 pokemon
     const getInitialPokemons = () =>{
@@ -20,6 +23,7 @@ function Pokedex() {
             .then(({data}) => {
                 setPokemons(data.results)
                 setFilteredPokemons(data.results)
+                setSinglePokemon(null)
             })
     }
 
@@ -38,6 +42,7 @@ function Pokedex() {
     useEffect(() => {
         if(!search) {
             setFilteredPokemons(pokemons)
+            setSinglePokemon(null)
             return
         }
 
@@ -60,6 +65,7 @@ function Pokedex() {
                 const typePokemons = data.pokemon.map(p => p.pokemon) 
                 setPokemons(typePokemons)
                 setFilteredPokemons(typePokemons)
+                setSinglePokemon(null)
             })
     },[selectedType])
 
@@ -72,25 +78,36 @@ function Pokedex() {
         axios.get(`${POKEAPI_BASE}/pokemon/${search}`)
             .then(({ data }) => {
                 if (selectedType !== 'all') {
-                    const isOfType = data.type.some(t => t.type.name === selectedType)
+                    const isOfType = data.types.some(t => t.type.name === selectedType)
                     if (!isOfType) {
+                        setSinglePokemon(null)
                         alert('El pokemon no es del tipo seleccionado')
                         return
                     }
                 }
-                console.log(data)
+                setSinglePokemon(data)
+            })
+            .catch(() => {
+                alert('Pokemon no encontrado')
             })
      }
  
   return (
     <div>
       <h1>Pokedex</h1>
-      {name && <p>Hola {name}, aqui padras encontrar tu pokemon 
-      favorito </p>}
+      {name &&
+      <div>
+      <p>Hola {name}, aqui padras encontrar tu pokemon 
+      favorito </p>
+      <button onClick={clearName}> Salir </button>
+      </div> 
+      }
       <input 
         type="text"
         value={search}
         onChange = {(e) => setSearch(e.target.value)} 
+        placeholder="Filter or Search by name or ID"
+        onKeyDown = {(e) => e.key === 'Enter' && searchPokemon()}
       />
       <button onClick={searchPokemon}>Search</button>
       <select
@@ -102,7 +119,14 @@ function Pokedex() {
         ))}
       </select>
 
-      <PokemonList pokemons={filteredPokemons} />
+       {singlePokemon ? 
+        <Link to={`/pokedex/${singlePokemon.name}`}>
+            <h2>{singlePokemon.name}</h2>
+            <img src={singlePokemon?.sprites?.front_default} alt="" />
+        </Link>
+        :
+        <PokemonList pokemons={filteredPokemons} />
+       }
     </div>
   )
 }

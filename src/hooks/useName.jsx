@@ -1,8 +1,14 @@
 import { create } from "zustand";
 
 export const useName = create((set) => ({
-        name: null,
-        setName: (name) => set({ name }),
-        clearName: () => {name: ''},
+        name: localStorage.getItem('name') || '',
+        setName: (name) => {
+            set({ name })
+            localStorage.setItem('name', name)
+        },
+        clearName: () => {
+            set({name: ''})
+            localStorage.removeItem('name')
+        },
     })
 )

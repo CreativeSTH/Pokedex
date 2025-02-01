@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Link } from "react-router"
 
 function PokemonCard({url}) {
     const [pokemon, setPokemon] = useState({})
@@ -11,10 +12,10 @@ function PokemonCard({url}) {
     if(!pokemon) return <p>Cargando...</p>
 
   return (
-    <div>
+    <Link to={`/pokedex/${pokemon.name}`}>
       <h2>{pokemon.name}</h2>
       <img src={pokemon?.sprites?.front_default} alt="" />
-    </div>
+    </Link>
   )
 }
 
