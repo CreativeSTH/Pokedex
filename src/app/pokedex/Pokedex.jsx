@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router"
 import axios from "axios"
 import PokemonList from "./components/PokemonList"
+import pokemon from "/img/pokemon.svg"
+import "../pokedex/pokedex.css"
 
 const POKEAPI_BASE = 'https://pokeapi.co/api/v2'
 
@@ -93,31 +95,36 @@ function Pokedex() {
      }
  
   return (
-    <div>
-      <h1>Pokedex</h1>
+    <div className="container__pokedex">
+      <img className="pokedex__logo" src={pokemon} alt="imagen de charizard" />
+      <h1 className="pokedex__title">POKEDEX</h1>
       {name &&
-      <div>
-      <p>Hola {name}, aqui padras encontrar tu pokemon 
-      favorito </p>
-      <button onClick={clearName}> Salir </button>
+      <div className="pokedex__info">
+        <p className="pokedex__text">Hola {name}, aqui padras encontrar tu pokemon 
+        favorito </p>
+        <button className="pokedex__button" onClick={clearName}> Salir </button>
       </div> 
       }
-      <input 
-        type="text"
-        value={search}
-        onChange = {(e) => setSearch(e.target.value)} 
-        placeholder="Filter or Search by name or ID"
-        onKeyDown = {(e) => e.key === 'Enter' && searchPokemon()}
-      />
-      <button onClick={searchPokemon}>Search</button>
-      <select
-        value={selectedType} 
-        onChange = {(e) => setSelectedType(e.target.value)}>
-        <option value="all">all</option>
-        {types.map(type =>(
-            <option key={type.name} value={type.name}>{type.name} </option>
-        ))}
-      </select>
+        <div className="pokedex__search">
+            <input
+            className="search__input"
+            type="text"
+            value={search}
+            onChange = {(e) => setSearch(e.target.value)} 
+            placeholder="Filter or Search by name or ID"
+            onKeyDown = {(e) => e.key === 'Enter' && searchPokemon()}
+            />
+            <button className="search__button" onClick={searchPokemon}>Search</button>
+            <select
+                className="search__select"
+                value={selectedType} 
+                onChange = {(e) => setSelectedType(e.target.value)}>
+                <option value="all">all</option>
+                {types.map(type =>(
+                    <option key={type.name} value={type.name}>{type.name} </option>
+                ))}
+            </select>
+        </div>
 
        {singlePokemon ? 
         <Link to={`/pokedex/${singlePokemon.name}`}>

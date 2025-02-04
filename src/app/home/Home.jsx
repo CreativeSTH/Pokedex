@@ -4,6 +4,7 @@ import { useName } from "../../hooks/useName"
 import "../home/home.css"
 import pikachu from "/img/pikachu.webp"
 import pokemon from "/img/pokemon.svg"
+import PikachuCanvas from "./PikachuModel"
 
 function Home() {
     const inputRef = useRef()
@@ -19,13 +20,15 @@ function Home() {
     <div className="container">
       <img className="pikachu" src={pikachu} alt="imagen de charizard" />
       <img className="pokelogo" src={pokemon} alt="imagen de charizard" />
-      <h1>POKEDEX</h1>
-      <h2>!Hola Entrenador</h2>
-      <p>Para poder comenzar dame tu nombre</p>
-        <input type="text" ref={inputRef}
+      {/* <PikachuCanvas /> */}
+      <h1 className="title-pokedex">POKEDEX</h1>
+      <div className="container-pokedex">
+        <input className="input-pokedex" type="text" ref={inputRef}
         onKeyDown={(e) => e.key === 'Enter' && handleSetName()}
-         />
-        <button onClick={handleSetName}>Comenzar</button>
+        />
+        <button className="button-pokedex" onClick={handleSetName}>Comenzar</button>
+        <p className="text-pokedex">Ingresa tu nombre para continuar</p>
+      </div>
     </div>
   )
 }
