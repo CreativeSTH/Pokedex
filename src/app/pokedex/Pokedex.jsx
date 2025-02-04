@@ -129,7 +129,7 @@ function Pokedex() {
        {singlePokemon ? 
         <Link to={`/pokedex/${singlePokemon.name}`}>
             <h2>{singlePokemon.name}</h2>
-            <img src={singlePokemon?.sprites?.front_default} alt="" />
+            <img src={singlePokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
         </Link>
         :
         <PokemonList pokemons={filteredPokemons} />

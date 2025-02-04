@@ -43,8 +43,8 @@
 
 *, *::after, *::before, html{
   box-sizing: border-box;
-  margin: inherit;
-  padding: inherit;
+  margin: 0;
+  padding: 0;
 
 }
 

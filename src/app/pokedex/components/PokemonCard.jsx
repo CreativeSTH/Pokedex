@@ -3,18 +3,29 @@ import axios from "axios"
 import { Link } from "react-router"
 
 function PokemonCard({url}) {
-    const [pokemon, setPokemon] = useState({})
-    useEffect(() => {
-        axios.get(url)
-            .then(({data}) => setPokemon(data))
-    }, [url])
+  const [pokemon, setPokemon] = useState({})
+  useEffect(() => {
+      axios.get(url)
+          .then(({data}) => setPokemon(data))
+  }, [url])
 
-    if(!pokemon) return <p>Cargando...</p>
+  if(!pokemon) return <p>Cargando...</p>
 
+  const styleCard ={
+    textDecoration: 'none',
+  }
+  console.log(pokemon)
   return (
-    <Link to={`/pokedex/${pokemon.name}`}>
-      <h2>{pokemon.name}</h2>
-      <img src={pokemon?.sprites?.front_default} alt="" />
+    <Link style={styleCard} to={`/pokedex/${pokemon.name}`}>
+      <div className="pokemon__card">
+        <img className="pokemon__card__img" src={pokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
+        <h2 className="pokemon__card__name">{pokemon.name}</h2>
+        <ul className="pokemon__card__types">
+          {pokemon?.types?.map(t => (
+              <li className="pokemon__card__type">{t.type.name}</li>
+          ))}
+        </ul>
+      </div>
     </Link>
   )
 }
