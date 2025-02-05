@@ -92,10 +92,10 @@ function Pokedex() {
             .catch(() => {
                 alert('Pokemon no encontrado')
             })
-     }
- 
+    }
+    
   return (
-    <div className="container__pokedex">
+    <div className="container__pokedex" >
       <img className="pokedex__logo" src={pokemon} alt="imagen de charizard" />
       <h1 className="pokedex__title">POKEDEX</h1>
       {name &&

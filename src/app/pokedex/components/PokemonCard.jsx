@@ -14,7 +14,7 @@ function PokemonCard({url}) {
   const styleCard ={
     textDecoration: 'none',
   }
-  console.log(pokemon)
+  //console.log(pokemon)
   return (
     <Link style={styleCard} to={`/pokedex/${pokemon.name}`}>
       <div className="pokemon__card">
