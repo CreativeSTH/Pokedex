@@ -20,9 +20,9 @@ function PokemonCard({url}) {
       <div className="pokemon__card">
         <img className="pokemon__card__img" src={pokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
         <h2 className="pokemon__card__name">{pokemon.name}</h2>
-        <ul className="pokemon__card__types">
+        <ul key={pokemon.id} className="pokemon__card__types">
           {pokemon?.types?.map(t => (
-              <li className="pokemon__card__type">{t.type.name}</li>
+              <li key={t.type.name} className="pokemon__card__type">{t.type.name}</li>
           ))}
         </ul>
       </div>

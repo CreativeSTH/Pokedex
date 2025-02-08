@@ -128,8 +128,15 @@ function Pokedex() {
 
        {singlePokemon ? 
         <Link to={`/pokedex/${singlePokemon.name}`}>
-            <h2>{singlePokemon.name}</h2>
-            <img src={singlePokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
+            <div className="pokemon__card" style={{marginTop:"30px"}}>
+                <img className="pokemon__card__img" src={singlePokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
+                <h2 className="pokemon__card__name">{singlePokemon.name}</h2>
+                <ul key={singlePokemon.id} className="pokemon__card__types">
+                    {singlePokemon?.types?.map(t => (
+                        <li key={t.type.name} className="pokemon__card__type">{t.type.name}</li>
+                    ))}
+                </ul>
+            </div>
         </Link>
         :
         <PokemonList pokemons={filteredPokemons} />

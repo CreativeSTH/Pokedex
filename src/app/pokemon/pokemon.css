@@ -1,0 +1,28 @@
+.containter__pokemon{
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px;
+    background-color: black;
+    min-height: 100dvh;
+    width: 100%;
+    color: white;
+    background-image: linear-gradient(to right, #ffffff09 1px, transparent 1px),  linear-gradient(to bottom, #ffffff09 1px, transparent 1px);
+    background-size: 50px 50px; /* Tamaño del patrón de puntos */
+   
+}
+.card__pokemon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    height: 500px;
+    background: rgba(0, 102, 255, 0.014); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(5px); 
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+    position: relative;
+}
+.card_pokemon_img{
+}
