@@ -7,7 +7,7 @@
 
   <h3 align="center">POKEDEX | A MODERN POKEDEX APP</h3>
   <p align="center">
-    ESPECTACULAR App, creada con react, Utilizando únicamente css moderno para los estilos.
+    Espectacular ejercicio de portafolio, creada con react, Utilizando únicamente css moderno para los estilos.
     <br />
     <a href="https://best-pokedex.netlify.app/"><strong>Demo »</strong></a>
     <br />
@@ -16,7 +16,7 @@
 </div>
 
 # Versión App
-- **Versión:** 0.1
+- **Versión:** 1.0
 - **Fecha (UTC):** 2025-02-08 22:45:57
 
 # PokeApi
