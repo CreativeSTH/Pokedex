@@ -72,17 +72,17 @@
     text-align: center;
 }
 .pokedex__button{
-    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde blanco semitransparente */
-    border-radius: 10px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
     padding: 10px 80px;
     font-size: 16px;
-    color: white; /* Color del texto */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    transition: all 0.3s ease; /* Transición suave */
-    border: none; /* Quitar el borde por defecto */
+    color: white;
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    border: none; 
 }
 .pokedex__search{
     display: flex;
@@ -93,52 +93,47 @@
     padding: 0px 30px;
 }
 .search__input{
-    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
-    border: 0.5px solid rgba(255, 255, 255, 0.5); /* Borde blanco semitransparente */
-    border-radius: 10px 0px 0px 10px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, 0.2); 
+    border: 0.5px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 10px 0px 0px 10px; 
     padding: 10px 15px;
     width: clamp(150px, 50vh, 800px);
     font-size: 16px;
-    color: white; /* Color del texto */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: all 0.3s ease; /* Transición suave */
+    color: white; 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; 
 
     &:focus{
-        border-color: rgba(255, 255, 255, 0.8); /* Cambiar el color del borde al enfocar */
-        outline: none; /* Quitar el contorno por defecto */
+        border-color: rgba(255, 255, 255, 0.8); 
+        outline: none; 
     }
 }
 .search__button{
-    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+    background: rgba(255, 255, 255, 0.2);
     border: 0.5px solid rgba(255, 255, 255, 0.5);
     padding: 10px 10px;
     font-size: 16px;
-    color: white; /* Color del texto */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    transition: all 0.3s ease; /* Transición suave */
+    color: white;
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    cursor: pointer; 
+    transition: all 0.3s ease;
 }
 .search__select{
-    background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
-    border: 0.5px solid rgba(255, 255, 255, 0.5); /* Borde blanco semitransparente */
-    border-radius: 0px 10px 10px 0px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, 0.2); 
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0px 10px 10px 0px;
     padding: 9.5px 5px;
     width: auto;
     font-size: 16px;
-    color: white; /* Color del texto */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: all 0.3s ease; /* Transición suave */
+    color: white;
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;
 
     &:focus{
-        border-color: rgba(255, 255, 255, 0.8); /* Cambiar el color del borde al enfocar */
-        outline: none; /* Quitar el contorno por defecto */
+        border-color: rgba(255, 255, 255, 0.8);
+        outline: none;
     }
 }
-/* @media (max-height: 600px) {
-    .container__pokedex {
-        min-height: 100vh; 
-    }
-} */
