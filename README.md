@@ -7,7 +7,7 @@
 
   <h3 align="center">POKEDEX | A MODERN POKEDEX APP</h3>
   <p align="center">
-    Espectacular ejercicio de portafolio, creada con react, Utilizando únicamente css moderno para los estilos.
+    Espectacular ejercicio de portafolio, creada con react, Utilizando únicamente css moderno para los estilos.Dive into the fascinating world of Pokémon with this interactive app that lets you explore and learn about your favorite creatures. Powered by React, the Pokedex App offers an intuitive and engaging interface so you can search, filter, and get detailed information about each Pokémon.
     <br />
     <a href="https://best-pokedex.netlify.app/"><strong>Demo »</strong></a>
     <br />
