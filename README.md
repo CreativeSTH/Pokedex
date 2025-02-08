@@ -6,13 +6,13 @@
   </a>
 
   <h3 align="center">POKEDEX | A MODERN POKEDEX APP</h3>
-
   <p align="center">
     ESPECTACULAR App, creada con react, Utilizando únicamente css moderno para los estilos.
     <br />
     <a href="https://best-pokedex.netlify.app/"><strong>Demo »</strong></a>
     <br />
   </p>
+  <img src="public/img/readme-img.png" alt="Logo" width="100%">
 </div>
 
 # Versión App
